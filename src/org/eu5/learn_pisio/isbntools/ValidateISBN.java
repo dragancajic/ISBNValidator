@@ -3,9 +3,9 @@ package org.eu5.learn_pisio.isbntools;
 public class ValidateISBN {
 
 	// Step 3: Refactor (i -> isbn)
-	public boolean checkISBN(int isbn) {
+	public boolean checkISBN(String isbn) {
 		
-		if (isbn == 140449116) {
+		if (isbn.equals("140449116")) {
 			return true;
 		} else {
 			return false;

@@ -19,14 +19,20 @@ public class ValidateISBNTest {
 	@Test
 	public void checkAValidISBN() {
 		ValidateISBN validator = new ValidateISBN();
-		boolean result = validator.checkISBN(140449116);
-		assertTrue(result);
+		boolean result = validator.checkISBN("140449116");
+		assertTrue("first value", result);
+		
+		// second example of valid ISBN number
+		// YES! We can put it in the same test method!
+		// It's the same logic that we are testing! :0)
+		result = validator.checkISBN("140489157");
+		assertTrue("second value", result);
 	}
 	
 	@Test
 	public void checkAnIvalidISBN() {
 		ValidateISBN validator = new ValidateISBN();
-		boolean result = validator.checkISBN(140449117);
+		boolean result = validator.checkISBN("140449117");
 		//fail();
 		assertFalse(result);
 	}
