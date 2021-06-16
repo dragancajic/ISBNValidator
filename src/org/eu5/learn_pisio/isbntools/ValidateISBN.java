@@ -1,20 +1,19 @@
 package org.eu5.learn_pisio.isbntools;
 
 public class ValidateISBN {
-
-	// Step 3: Refactor (i -> isbn)
+	
 	public boolean checkISBN(String isbn) {
+		// start implementing business logic
+		int total = 0;
 		
-		if (isbn.equals("140449116")) {
+		for (int i = 0; i < 10; i++) {
+			total = isbn.charAt(i) * (10 - i);
+		}
+		
+		if (total % 11 == 0) {
 			return true;
 		} else {
 			return false;
 		}
-		
-		// Step 1: Getting to red
-		//return false;
-		
-		// Step 2: Getting to green
-		//return true;
 	}
 }
