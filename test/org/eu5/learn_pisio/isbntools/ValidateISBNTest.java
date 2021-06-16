@@ -36,5 +36,18 @@ public class ValidateISBNTest {
 		//fail();
 		assertFalse(result);
 	}
+	
+	@Test(expected = NumberFormatException.class)
+	public void nineDigitISBNsAreNotAllowed() {
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("123456789");
+	}
+	
+	// check that "helloworld" gives a NumberFormatException
+	@Test(expected = NumberFormatException.class)
+	public void nonNumericISBNsAreNotAllowed() {
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("helloworld");
+	}
 
 }
