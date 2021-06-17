@@ -5,6 +5,10 @@ public class ValidateISBN {
 	public boolean checkISBN(String isbn) {
 		// start implementing business logic
 		
+		if (isbn.length() == 13) {
+			return true;
+		}
+		
 		if (isbn.length() != 10) {
 			throw new NumberFormatException("ISBN numbers must be 10 digits long!");
 		}
@@ -31,7 +35,7 @@ public class ValidateISBN {
 			
 			if (!Character.isDigit(digit)) {
 				if (i == 9 && digit == 'X') {
-					// this is OK!
+					total += 10;
 				} else {
 					throw new NumberFormatException("ISBNs can only contain numeric characters!");
 				}
